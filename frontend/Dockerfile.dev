@@ -1,6 +1,7 @@
-FROM node:alpine
+# updated this from course version
+FROM node:10-alpine 
 
-WORKDIR '/app';
+WORKDIR '/app'
 
 COPY package.json .
 RUN npm install
