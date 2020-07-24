@@ -8,6 +8,7 @@ RUN npm install
 
 # Copy all files and folders in the current (root) directory
 # into our working directory we specified above '/app'
-COPY . . 
+# not needed now we are using docker-compose, Stephen so says to leave it in incase we ever extract this Dockerfile to work on its own
+COPY . .  
 
 CMD ["npm", "run", "start"]
