@@ -1,0 +1,17 @@
+version: '3'
+# specify list of different services or containers 
+# that are going to be created when we run docker-compose up
+services:
+  # this service name can be anything we want
+  web:
+    # now we will specify the image we will use to create the initial container
+    # build . means build from the current directory assuming there is a file called Dockerfile at this location
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+    # a dash (-) indicates a list
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
