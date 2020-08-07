@@ -1,5 +1,5 @@
 # build stage
-FROM node:alpine as builder
+FROM node:10-alpine as builder
 WORKDIR '/app'
 # copy package.json into the current working directory 
 # e.g. into /app
