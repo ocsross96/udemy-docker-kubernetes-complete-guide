@@ -15,4 +15,13 @@ services:
     volumes:
       - /app/node_modules
       - .:/app
+    # fix for https://github.com/facebook/create-react-app/issues/8688
     stdin_open: true
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test:watch"]
